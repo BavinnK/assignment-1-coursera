@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //GLOBAL VARS
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-unsigned char arr_num []={23,90,2,46,4,77,89,34,1,102,111,11};
+unsigned char arr_num []={23,90,2,46,4,77,89,34,1,1,102,111,11};
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //PROTOTYPES
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,6 +16,7 @@ void print_array(unsigned char *ptr,int size);
 void print_array(unsigned char *ptr,int size);
 void print_statistics(void);
 unsigned char find_median(unsigned char *ptr,int size);
+unsigned char find_mean(unsigned char *ptr,int size);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
@@ -50,7 +51,7 @@ unsigned char find_minimum(unsigned char *ptr,int size){
 }// end min func
 
 
-//signed char find_median() {}
+
 //for sort array func i used bubble sort algorithm
 void sort_array(unsigned char *ptr,int size){
 
@@ -70,7 +71,9 @@ void sort_array(unsigned char *ptr,int size){
         
     }
     
-}
+}//end sort array func
+
+
 //print array func
 void print_array(unsigned char *ptr,int size){
     
@@ -95,8 +98,11 @@ void print_statistics(void) {
     unsigned char max_num = find_maximum(arr_num,size);
     unsigned char min_num = find_minimum(arr_num,size);
     unsigned char med_num = find_median(arr_num,size);
-    printf("\nmax:%d\nmin:%d\nmedian: %d\n",max_num,min_num,med_num);
+    unsigned char mean_num = find_mean(arr_num,size);
+    printf("\nmax:%d\nmin:%d\nmedian: %d\nmean:%d",max_num,min_num,med_num,mean_num);
 }//end of print_statistic
+
+
 //find median func
 unsigned char find_median(unsigned char *ptr,int size){
     
@@ -107,8 +113,19 @@ unsigned char find_median(unsigned char *ptr,int size){
     else
         return (ptr[(size-1)/2]+ptr[size/2])/2;
 
-}
+}//end median func
 
+
+//mean func
+unsigned char find_mean(unsigned char *ptr,int size){
+    int mean=0;
+    for (int i = 0; i < size; i++)
+    {
+        mean=mean+ptr[i];
+    }
+    return mean/size;
+    
+}//end mean func
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //MAIN
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
