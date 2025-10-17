@@ -1,3 +1,10 @@
+/*
+  author        : bavin kawa hama ali
+  location      : kurdistan
+  study         : bachelor of computer science - computer engineering
+  goal          : to become an embedded systems engineer
+  date created  : october 2025
+*/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //INCLUDES
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -89,17 +96,20 @@ void print_array(unsigned char *ptr,int size){
 //print everything func
 void print_statistics(void) {
     int size = (sizeof(arr_num)/sizeof(arr_num[0]));
+    printf("--------------------------------------------------------------------\n");
     printf("Before sorting: ");
     print_array(arr_num,size);
     printf("--------------------------------------------------------------------\n");
     sort_array(arr_num,size);
-    printf("after sorting:  ");
+    printf("After sorting:  ");
     print_array(arr_num,size);
+    printf("--------------------------------------------------------------------\n");
     unsigned char max_num = find_maximum(arr_num,size);
     unsigned char min_num = find_minimum(arr_num,size);
     unsigned char med_num = find_median(arr_num,size);
     unsigned char mean_num = find_mean(arr_num,size);
-    printf("\nmax:%d\nmin:%d\nmedian: %d\nmean:%d",max_num,min_num,med_num,mean_num);
+    printf("Maximum Number:%d\nMinimum Number:%d\nMedian Number :%d\nMean Number:%d\n",max_num,min_num,med_num,mean_num);
+    printf("--------------------------------------------------------------------\n");
 }//end of print_statistic
 
 
