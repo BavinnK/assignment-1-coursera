@@ -1,7 +1,15 @@
+/*
+  author        : bavin kawa hama ali
+  location      : kurdistan
+  study         : bachelor of computer science - computer engineering
+  goal          : to become an embedded systems engineer
+  date created  : october 2025
+*/
 #ifndef assigment_h
 #define assigment_h
 
-#include <stdio.h>
+
+
 
 // function prototypes
 
