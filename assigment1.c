@@ -15,6 +15,7 @@ void sort_array(unsigned char *ptr,int size);
 void print_array(unsigned char *ptr,int size);
 void print_array(unsigned char *ptr,int size);
 void print_statistics(void);
+unsigned char find_median(unsigned char *ptr,int size);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //FUNCTIONS
@@ -93,8 +94,20 @@ void print_statistics(void) {
     print_array(arr_num,size);
     unsigned char max_num = find_maximum(arr_num,size);
     unsigned char min_num = find_minimum(arr_num,size);
-    printf("\nmax:%d\nmin:%d\n",max_num,min_num);
+    unsigned char med_num = find_median(arr_num,size);
+    printf("\nmax:%d\nmin:%d\nmedian: %d\n",max_num,min_num,med_num);
 }//end of print_statistic
+//find median func
+unsigned char find_median(unsigned char *ptr,int size){
+    
+    if (size%2==1)//if it's true it means its odd
+    {
+        return ptr[size/2];
+    }
+    else
+        return (ptr[(size-1)/2]+ptr[size/2])/2;
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //MAIN
